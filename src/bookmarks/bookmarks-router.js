@@ -37,10 +37,9 @@ bookmarksRouter
 
     if (!isWebUri(url)) {
       logger.error(`Invalid url '${url}' supplied`)
-      return res.status(400).send(`'url' must be a valid URL`)
+      return res.status(400).send(`${url} is not a valid URL`)
     }
 
-    // get an id
     const bookmark = { id: uuid(), title, url, description, rating }
 
     store.bookmarks.push(bookmark)
